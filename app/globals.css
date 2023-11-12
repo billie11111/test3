@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+
+/* Fonts */
+@font-face {
+  font-family: "SUIT";
+  font-weight: 300;
+  src: local("SUIT") url(/fonts/SUIT-Regular.woff2) format("woff2"),
+    local("SUIT"), url(/fonts/SUIT-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SUIT";
+  font-weight: 700;
+  src: local("SUIT") url(/fonts/SUIT-Bold.woff2) format("woff2"), local("SUIT"),
+    url(/fonts/SUIT-Bold.woff2) format("woff2");
+  font-display: swap;
+}
+
+body {
+  font-family: "SUIT";
+  font-weight: 300;
+}
+
+.custom-yaxis-label {
+  letter-spacing: -0.368px;
+}
+
+.custom-xaxis-label {
+}
+
+.custom_tooltip_box {
+  border: 1px solid red;
+  padding: 5px;
+}
+
+.custom_tooltip_box > span {
+  display: block;
+}
