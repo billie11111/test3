@@ -123,6 +123,7 @@ export default function HorizontalBarChart(props: any) {
       labels: {
         show: false,
         offsetY: 4,
+        formatter: (value: any) => { return value.toFixed(0) },
 
         style: {
           colors: ["#000"],

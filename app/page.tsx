@@ -2,7 +2,9 @@
 import { styled } from "styled-components";
 import HorizontalBarChart from "./components/horizontalBarChart";
 import PolarAreaCharts from "./components/PolarAreaChart";
+import RoundedVerticalBarChart from "./components/roundedVerticalBarChart";
 import SemiDonutGaugeChart from "./components/semiDonutGaugeChart";
+import VerticalBarLineMixedChart from "./components/verticalBarLineMixedChart";
 
 const Wrapper = styled.main`
   max-width: 450px;
@@ -68,8 +70,23 @@ export default function Home() {
       </SemiDonutGaugeWrapper>
 
       <Wrapper>
-        <h2> (학습전략 그래프_01)</h2>
+        <h2>사용자 타입 그래프</h2>
+        <RoundedVerticalBarChart />
+      </Wrapper>
 
+
+
+      <Wrapper>
+        <h2>교육적 성향 그래프</h2>
+        <VerticalBarLineMixedChart />
+      </Wrapper>
+
+      <Wrapper>
+        <h2>학습전략 1.</h2>
+      </Wrapper>
+
+      <Wrapper>
+        <h2>학습전략 2.</h2>
       </Wrapper>
     </>
   )
