@@ -36,7 +36,7 @@ const SemiDonutGaugeWrapper = styled.main`
 `;
 
 const data = {
-  organization: 'low', //조직화
+  organization: 'high', //조직화
   elaboration: 'high', //정교화
 }
 

@@ -88,6 +88,8 @@ export const TableChart = forwardRef((props: any, ref: any) => {
 
     let targetClassName = []
 
+    // ex) 조직화 : high -> 3, 정교화: middle -> 2
+    // ex) targetClassName = [3, 2]
     if (props.data.organization === 'low') targetClassName.push('1')
     if (props.data.organization === 'middle') targetClassName.push('2')
     if (props.data.organization === 'high') targetClassName.push('3')
