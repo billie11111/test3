@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useRef } from "react";
 import { styled } from "styled-components";
+import ErrorBarChart from "./components/errorBarChart";
 import HorizontalBarChart from "./components/horizontalBarChart";
 import PolarAreaCharts from "./components/PolarAreaChart";
 import RoundedVerticalBarChart from "./components/roundedVerticalBarChart";
@@ -92,7 +93,8 @@ export default function Home() {
       </Wrapper>
 
       <Wrapper>
-        <h2>학습전략 / 보완점 (표그래프)</h2>
+        <h2>나의 교육적 성향 (Plotly.js - Error Bars)</h2>
+        <ErrorBarChart />
       </Wrapper>
     </>
   )
