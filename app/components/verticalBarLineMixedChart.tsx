@@ -21,7 +21,59 @@ const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 export default function VerticalBarLineMixedChart() {
 
+  // const series = [{
+  //   data: [
+  //     {
+  //       x: 'E',
+  //       y: 3
+  //     },
+  //     {
+  //       x: 'O',
+  //       y: 2.7
+  //     },
+  //     {
+  //       x: 'A',
+  //       y: 4
+  //     },
+  //     {
+  //       x: 'C',
+  //       y: 3
+  //     },
+  //     {
+  //       x: 'N',
+  //       y: 4
+  //     }
+  //   ]
+  // }]
+
   const series = [{
+    name: 'average',
+    type: 'rangeArea',
+    data: [
+      {
+        x: 'E',
+        y: [2.5, 3.5]
+      },
+      {
+        x: 'O',
+        y: [2, 3]
+      },
+      {
+        x: 'A',
+        y: [2.5, 3.5]
+      },
+      {
+        x: 'C',
+        y: [2.5, 3.5]
+      },
+      {
+        x: 'N',
+        y: [2.5, 3.5]
+      }
+    ],
+  }, {
+    name: 'value',
+    type: 'bar',
     data: [
       {
         x: 'E',
@@ -43,7 +95,7 @@ export default function VerticalBarLineMixedChart() {
         x: 'N',
         y: 4
       }
-    ]
+    ],
   }]
 
   const options = {
@@ -83,7 +135,7 @@ export default function VerticalBarLineMixedChart() {
       labels: {
         show: true,
         offsetY: 4,
-        formatter: (value: any) => { return value.toFixed(0) },
+        //formatter: (value: any) => { return value.toFixed(0) },
 
         style: {
           colors: ["#D4D4D4"],
@@ -133,7 +185,7 @@ export default function VerticalBarLineMixedChart() {
     <Wrapper>
       <ChartContainer>
         <ApexChart
-          type="bar"
+          type="rangeArea"
           options={options}
           series={series}
           width='100%'

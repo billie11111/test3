@@ -148,7 +148,7 @@ export default function RoundedVerticalBarChart() {
       labels: {
         show: true,
         offsetY: 4,
-        formatter: (value: any) => { return value.toFixed(0) },
+        //formatter: (value: any) => { return value.toFixed(0) },
 
         style: {
           colors: ["#D4D4D4"],

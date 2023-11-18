@@ -1,9 +1,12 @@
 'use client'
+import { useEffect, useRef } from "react";
 import { styled } from "styled-components";
 import HorizontalBarChart from "./components/horizontalBarChart";
 import PolarAreaCharts from "./components/PolarAreaChart";
 import RoundedVerticalBarChart from "./components/roundedVerticalBarChart";
 import SemiDonutGaugeChart from "./components/semiDonutGaugeChart";
+import { TableChart } from "./components/tableChart";
+import { Test } from "./components/test";
 import VerticalBarLineMixedChart from "./components/verticalBarLineMixedChart";
 
 const Wrapper = styled.main`
@@ -32,10 +35,19 @@ const SemiDonutGaugeWrapper = styled.main`
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
 `;
 
+const data = {
+  organization: 'low', //조직화
+  elaboration: 'high', //정교화
+}
+
+
 export default function Home() {
+
+  const tbodyRef = useRef(null);
+
   return (
     <>
-      <Wrapper>
+      {/* <Wrapper>
         <h2>HorizontalBarChart (정서조절 그래프)</h2>
         <HorizontalBarChart
           chartId="chart-1"
@@ -72,21 +84,15 @@ export default function Home() {
       <Wrapper>
         <h2>사용자 타입 그래프</h2>
         <RoundedVerticalBarChart />
-      </Wrapper>
-
-
+      </Wrapper> */}
 
       <Wrapper>
-        <h2>교육적 성향 그래프</h2>
-        <VerticalBarLineMixedChart />
-      </Wrapper>
-
-      <Wrapper>
-        <h2>학습전략 1.</h2>
+        <h2>학습전략 / 보완점 (조직화-정교화)</h2>
+        <TableChart ref={tbodyRef} data={data} />
       </Wrapper>
 
       <Wrapper>
-        <h2>학습전략 2.</h2>
+        <h2>학습전략 / 보완점 (표그래프)</h2>
       </Wrapper>
     </>
   )

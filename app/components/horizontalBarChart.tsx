@@ -86,7 +86,7 @@ export default function HorizontalBarChart(props: any) {
     //데이터 라벨
     dataLabels: {
       enabled: true,
-      formatter: (value: any) => value.toFixed(1),
+      //formatter: (value: any) => value.toFixed(1),
 
       style: {
         colors: ['#2a2927'],
