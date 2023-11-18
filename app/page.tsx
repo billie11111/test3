@@ -11,6 +11,7 @@ import { Test } from "./components/test";
 import VerticalBarLineMixedChart from "./components/verticalBarLineMixedChart";
 
 const Wrapper = styled.main`
+  overflow:hidden;
   max-width: 450px;
   padding: 25px 30px 25px 30px;
   width: 100%;
@@ -20,6 +21,12 @@ const Wrapper = styled.main`
   border: 1px solid #e1e1e1;
   border-radius: 10px;
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+
+  .error-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const SemiDonutGaugeWrapper = styled.main`
@@ -48,7 +55,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <Wrapper>
+      <Wrapper>
         <h2>HorizontalBarChart (정서조절 그래프)</h2>
         <HorizontalBarChart
           chartId="chart-1"
@@ -85,7 +92,7 @@ export default function Home() {
       <Wrapper>
         <h2>사용자 타입 그래프</h2>
         <RoundedVerticalBarChart />
-      </Wrapper> */}
+      </Wrapper>
 
       <Wrapper>
         <h2>학습전략 / 보완점 (조직화-정교화)</h2>
@@ -94,7 +101,13 @@ export default function Home() {
 
       <Wrapper>
         <h2>나의 교육적 성향 (Plotly.js - Error Bars)</h2>
-        <ErrorBarChart />
+        <div className="error-container">
+          <ErrorBarChart />
+        </div>
+      </Wrapper>
+
+      <Wrapper>
+        <h2>aaa</h2>
       </Wrapper>
     </>
   )
