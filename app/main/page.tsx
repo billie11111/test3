@@ -1,11 +1,22 @@
 'use client'
-import { animated, useSpring } from '@react-spring/web'
+import { animated, useScroll, useSpring } from '@react-spring/web'
+import { styled } from 'styled-components'
+
+const AnimatedBox = styled.div`
+  width: 80px;
+  height: 80px;
+  background: #ff6d6d;
+  border-radius: 8px;
+`;
 
 export default function MainPage() {
-  const [springs, api] = useSpring(() => ({
+
+  //Spring
+  const [props, api] = useSpring(() => ({
     from: { x: 0 },
   }))
 
+  //Event
   const handleClick = () => {
     api.start({
       from: {
@@ -18,15 +29,12 @@ export default function MainPage() {
   }
 
   return (
-    <animated.div
-      onClick={handleClick}
-      style={{
-        width: 80,
-        height: 80,
-        background: '#ff6d6d',
-        borderRadius: 8,
-        ...springs
-      }}
-    />
+    <>
+      <AnimatedBox
+        as={animated.div}
+        onClick={handleClick}
+        style={props}
+      />
+    </>
   )
 }
