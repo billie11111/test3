@@ -1,6 +1,7 @@
 'use client'
 import { useRef } from "react";
 import { styled } from "styled-components";
+import ErrorBarChart from "./components/errorBarChart";
 // import ErrorBarChart from "./components/errorBarChart";
 import HorizontalBarChart from "./components/horizontalBarChart";
 import PolarAreaCharts from "./components/PolarAreaChart";
@@ -54,6 +55,9 @@ export default function Home() {
   return (
     <>
       <Wrapper>
+        <ErrorBarChart />
+      </Wrapper>
+      <Wrapper>
         <h2>HorizontalBarChart (정서조절 그래프)</h2>
         <HorizontalBarChart
           chartId="chart-1"
@@ -95,12 +99,6 @@ export default function Home() {
       <Wrapper>
         <h2>학습전략 / 보완점 (조직화-정교화)</h2>
         <TableChart ref={tbodyRef} data={data} />
-      </Wrapper>
-
-
-
-      <Wrapper>
-        <h2>aaa</h2>
       </Wrapper>
     </>
   )
