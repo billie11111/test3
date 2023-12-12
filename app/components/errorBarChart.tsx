@@ -13,7 +13,7 @@ import {
   BarController,
 } from 'chart.js';
 
-import { Chart as ErrorBarLineChart } from 'react-chartjs-2';
+import { Chart as ErrorBarLineChart, Bar } from 'react-chartjs-2';
 import {
   // BarWithErrorBarsController,
   // BarWithErrorBar,
@@ -130,9 +130,29 @@ const options = {
 //   ],
 // };
 
+// {
+//   type: 'bar' as const,
+//   label: 'Dataset 2',
+//   backgroundColor: 'rgb(75, 192, 192)',
+//   data: [3.2, 3.8, 3.5, 4.9, 2.4],
+//   borderColor: 'white',
+//   borderWidth: 2,
+// },
+
 const labels = ['E', 'O', 'A', 'C', 'N'];
 
-const errorBarLineChartdata = {
+const barChartData = {
+  labels,
+  datasets: [
+    {
+      type: 'bar' as const,
+      data: [3.2, 3.8, 3.5, 4.9, 2.4],
+      backgroundColor: 'rgb(75, 192, 192)',
+    }
+  ],
+}
+
+const errorBarLineChartData = {
   labels,
   datasets: [
     {
@@ -166,15 +186,7 @@ const errorBarLineChartdata = {
       ],
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)"
-    },
-    // {
-    //   type: 'bar' as const,
-    //   label: 'Dataset 2',
-    //   backgroundColor: 'rgb(75, 192, 192)',
-    //   data: [3.2, 3.8, 3.5, 4.9, 2.4],
-    //   borderColor: 'white',
-    //   borderWidth: 2,
-    // },
+    }
   ]
 }
 
@@ -187,9 +199,9 @@ export default function ErrorBarChart() {
         type='lineWithErrorBars'
         redraw={false}
         options={options}
-        data={errorBarLineChartdata}
+        data={errorBarLineChartData}
       />
-
+      <Bar data={barChartData} options={options} />
     </>
   )
 }
