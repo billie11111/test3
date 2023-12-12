@@ -57,7 +57,7 @@ export default function Home() {
       <Wrapper>
         <ErrorBarChart />
       </Wrapper>
-      <Wrapper>
+      {/* <Wrapper>
         <h2>HorizontalBarChart (정서조절 그래프)</h2>
         <HorizontalBarChart
           chartId="chart-1"
@@ -99,7 +99,7 @@ export default function Home() {
       <Wrapper>
         <h2>학습전략 / 보완점 (조직화-정교화)</h2>
         <TableChart ref={tbodyRef} data={data} />
-      </Wrapper>
+      </Wrapper> */}
     </>
   )
 }
