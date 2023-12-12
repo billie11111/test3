@@ -43,10 +43,16 @@ const options = {
   animation: {
     duration: 0
   },
+  barPercentage: 0.75,
   scales: {
     x: {
       ticks: {
-        display: true
+        display: true,
+        color: '#000',
+        font: {
+          family: "SUIT",
+          size: 14,
+        }
       },
       beginAtZero: false,
       grid: {
@@ -54,11 +60,21 @@ const options = {
       }
     },
     y: {
+      ticks: {
+        stepSize: 1,
+        color: '#8E8E8E',
+        font: {
+          family: "SUIT",
+          size: 12,
+          weight: 300,
+        }
+      },
       suggestedMax: 5,
-      beginAtZero: true
+      beginAtZero: true,
     }
   },
-  responsive: false,
+  responsive: true,
+  maintainAspectRatio: true,
   plugins: {
     legend: {
       display: false
@@ -146,7 +162,6 @@ const data: any = {
   datasets: [
     {
       type: 'lineWithErrorBars' as const,
-      label: 'Dataset 1',
       data: [
         {
           y: 3,
@@ -174,14 +189,16 @@ const data: any = {
           yMax: 3.7,
         },
       ],
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)"
+      borderColor: "#FFB93E",
+      backgroundColor: "#FFB93E",
+      errorBarColor: "#FFB93E",
+      errorBarWhiskerSize: 0
     },
     {
       type: 'bar' as const,
-      label: 'Dataset 2',
+      label: 'value',
       data: [3.2, 3.8, 3.5, 4.9, 2.4],
-      backgroundColor: 'rgb(75, 192, 192)',
+      backgroundColor: '#7DC387',
     }
   ]
 }
