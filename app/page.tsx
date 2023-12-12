@@ -1,14 +1,12 @@
 'use client'
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { styled } from "styled-components";
-import ErrorBarChart from "./components/errorBarChart";
+// import ErrorBarChart from "./components/errorBarChart";
 import HorizontalBarChart from "./components/horizontalBarChart";
 import PolarAreaCharts from "./components/PolarAreaChart";
 import RoundedVerticalBarChart from "./components/roundedVerticalBarChart";
 import SemiDonutGaugeChart from "./components/semiDonutGaugeChart";
 import { TableChart } from "./components/tableChart";
-import { Test } from "./components/test";
-import VerticalBarLineMixedChart from "./components/verticalBarLineMixedChart";
 
 const Wrapper = styled.main`
   overflow:hidden;
@@ -99,12 +97,7 @@ export default function Home() {
         <TableChart ref={tbodyRef} data={data} />
       </Wrapper>
 
-      <Wrapper>
-        <h2>나의 교육적 성향 (Plotly.js - Error Bars)</h2>
-        <div className="error-container">
-          <ErrorBarChart />
-        </div>
-      </Wrapper>
+
 
       <Wrapper>
         <h2>aaa</h2>
